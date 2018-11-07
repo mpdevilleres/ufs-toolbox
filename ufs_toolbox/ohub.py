@@ -32,9 +32,9 @@ class Ohub(object):
         res = requests.post(self.auth_url, data=payload)
         data = res.json()
         if res.status_code == 200:
-            return data['access_token'], data
+            return data['access_token'], res
 
-        return False, data
+        return False, res
 
     def create_header_auth(self):
         access_token, response = self.get_access_token()
@@ -52,9 +52,9 @@ class Ohub(object):
         files = {'file': open(filename, 'rb')}
         res = requests.post(self.ohub_url + '/uploadFile', files=files, headers=header)
         if res.status_code == 200:
-            return True, res.content.decode()
+            return True, res
 
-        return False, res.json()['message']
+        return False, res
 
     def upload(self):
         url = urlparse(self.filename)
@@ -75,11 +75,11 @@ class Ohub(object):
         params = {'fileName': fn}
         res = requests.get(self.ohub_url + '/getfileuploaderrorslist', params=params, headers=header)
         if res.status_code == 200:
-            return True, res.content.decode()
+            return True, res
 
-        return False, res.json()['message']
+        return False, res
 
 
 if __name__ == '__main__':
-    ohub = Ohub('s3://ufs-notebooks/Production/data_query/ohub_final/UFS_ARMSTRONG_CONTACTPERSONS_20181105180012.csv')
-    print(ohub.get_error())
+    ohub = Ohub('s3://ufs-notebooks/Production/data_query/ohub_final/UFS_ARMSTRONG_ORDERSS_20181107065009.csv')
+    print(ohub.upload())
