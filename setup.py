@@ -15,6 +15,7 @@ requirements = [
     'Click>=6.0',
     'pandas',
     'boto3',
+    'requests'
 ]
 
 setup_requirements = ['pytest-runner', ]
