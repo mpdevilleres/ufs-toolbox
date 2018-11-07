@@ -7,7 +7,7 @@ import pytest
 
 from click.testing import CliRunner
 
-from ufs_toolbox import ufs_toolbox
+from ufs_toolbox import save_to_s3
 from ufs_toolbox import cli
 
 
