@@ -5,22 +5,6 @@ import requests
 import boto3
 from urllib.parse import urlparse
 
-"""
-CLIENT_ID       50ca4ed8-97b0-43fd-a429-4c101b69b739
-CLIENT_SECRET   LhjJr7DKJRIOmpNs5BnEudg4KNcGNr2s/ygW4x71XSk=
-AUTH_URL        https://login.microsoftonline.com/f66fae02-5d36-495b-bfe0-78a6ff9f8e6e/oauth2/token
-OHUB_URL        https://ohub2-uat.azurewebsites.net
-RESOURCE        64914952-d550-4215-ae7a-28fae169f57c
-CLIENT_ID=50ca4ed8-97b0-43fd-a429-4c101b69b739
-CLIENT_SECRET=LhjJr7DKJRIOmpNs5BnEudg4KNcGNr2s/ygW4x71XSk=
-AUTH_URL=https://login.microsoftonline.com/f66fae02-5d36-495b-bfe0-78a6ff9f8e6e/oauth2/token
-OHUB_URL=https://ohub2-uat.azurewebsites.net
-RESOURCE=64914952-d550-4215-ae7a-28fae169f57c
-
-Application  50ca4ed8-97b0-43fd-a429-4c101b69b739
-
-"""
-
 
 class Ohub(object):
     client_id = os.environ.get('CLIENT_ID')
