@@ -8,3 +8,4 @@ __version__ = '0.1.3'
 
 from .save_to_s3 import save_to_s3
 from .ohub import Ohub
+from .mem_usage import mem_usage
